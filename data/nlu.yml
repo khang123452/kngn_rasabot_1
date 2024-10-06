@@ -1,0 +1,110 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+
+- intent: goodbye
+  examples: |
+    - bye
+    - see you later
+    - goodbye
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+
+- intent: deny
+  examples: |
+    - no
+    - not really
+    - nope
+
+- intent: mood_great
+  examples: |
+    - I am feeling great
+    - I am happy
+    - I feel awesome
+
+- intent: mood_unhappy
+  examples: |
+    - I am feeling sad
+    - I am not happy
+    - I feel bad
+
+- intent: bot_challenge
+  examples: |
+    - Are you a bot?
+    - What are you?
+    - Are you human?
+
+- intent: move
+  examples: |
+    - move
+    - I want to move
+    - please move
+
+- intent: goto
+  examples: |
+    - go to the living room
+    - take me to the kitchen
+    - head to the bedroom
+
+- intent: stop
+  examples: |
+    - stop
+    - halt
+    - please stop
+
+- intent: pickup
+  examples: |
+    - pick up the book
+    - I want to pick up the object
+    - can you grab the toy?
+
+- intent: place
+  examples: |
+    - place the book on the table
+    - put the object on the shelf
+    - set it down over there
+
+- intent: battery
+  examples: |
+    - what is my battery level?
+    - check battery
+    - how much battery do I have?
+
+- intent: location
+  examples: |
+    - where are you?
+    - what is your location?
+    - where is the robot?
+
+- intent: status
+  examples: |
+    - what is your status?
+    - how are you?
+    - give me a status report
+
+- intent: follow
+  examples: |
+    - follow me
+    - can you follow?
+    - stay with me
+
+- intent: avoid
+  examples: |
+    - avoid the chair
+    - don't go near the table
+    - steer clear of the wall
+
+- intent: map
+  examples: |
+    - show me the map
+    - can I see the map?
+    - display the map

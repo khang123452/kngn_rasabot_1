@@ -1,0 +1,74 @@
+version: "3.1"
+
+rules:
+- rule: Activate move form
+  steps:
+  - intent: move
+  - action: move_form
+
+- rule: Submit move form
+  steps:
+  - active_loop: move_form
+  - action: action_move
+  - action: utter_move_confirmation
+  - action: action_listen
+
+- rule: Activate goto form
+  steps:
+  - intent: goto
+  - action: goto_form
+
+- rule: Submit goto form
+  steps:
+  - active_loop: goto_form
+  - action: action_goto
+  - action: utter_goto_confirmation
+  - action: action_listen
+
+- rule: Activate pickup form
+  steps:
+  - intent: pickup
+  - action: pickup_form
+
+- rule: Submit pickup form
+  steps:
+  - active_loop: pickup_form
+  - action: action_pickup
+  - action: utter_pickup_confirmation
+  - action: action_listen
+
+- rule: Activate place form
+  steps:
+  - intent: place
+  - action: place_form
+
+- rule: Submit place form
+  steps:
+  - active_loop: place_form
+  - action: action_place
+  - action: utter_place_confirmation
+  - action: action_listen
+
+- rule: Activate follow form
+  steps:
+  - intent: follow
+  - action: follow_form
+
+- rule: Submit follow form
+  steps:
+  - active_loop: follow_form
+  - action: action_follow
+  - action: utter_follow_completed
+  - action: action_listen
+
+- rule: Activate avoid form
+  steps:
+  - intent: avoid
+  - action: avoid_form
+
+- rule: Submit avoid form
+  steps:
+  - active_loop: avoid_form
+  - action: action_avoid
+  - action: utter_avoid_completed
+  - action: action_listen

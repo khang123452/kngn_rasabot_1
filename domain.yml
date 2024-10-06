@@ -1,0 +1,174 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - move
+  - goto
+  - stop
+  - pickup
+  - place
+  - battery
+  - location
+  - status
+  - follow
+  - avoid
+  - map
+
+entities:
+  - direction
+  - distance
+  - speed
+  - location
+  - object
+  - person
+  - obstacle
+
+slots:
+  direction:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: direction
+
+  distance:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: distance
+
+  speed:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: speed
+
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+
+  object:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: object
+
+  person:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: person
+
+  obstacle:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: obstacle
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_move_confirmation:
+    - text: "Moving {direction} {distance} meters at {speed} speed."
+
+  utter_goto_confirmation:
+    - text: "Heading to {location}."
+
+  utter_stop_confirmation:
+    - text: "Stopping now."
+
+  utter_pickup_confirmation:
+    - text: "Picking up the {object}."
+
+  utter_place_confirmation:
+    - text: "Placing the {object} at {location}."
+
+  utter_battery_status:
+    - text: "Battery level is {battery_level}%."
+
+  utter_location_status:
+    - text: "I am currently at {location}."
+
+  utter_status_report:
+    - text: "I am currently {status}."
+
+  utter_move_completed:
+    - text: "The move action is completed."
+  
+  utter_goto_completed:
+    - text: "I've reached the destination."
+  
+  utter_robot_stopped:
+    - text: "The robot has stopped."
+  
+  utter_pickup_completed:
+    - text: "I've picked up the object."
+  
+  utter_place_completed:
+    - text: "I've placed the object."
+  
+  utter_follow_completed:
+    - text: "I'm following you now."
+  
+  utter_avoid_completed:
+    - text: "I'm avoiding the obstacle."
+  
+  utter_map:
+    - text: "Here is the map of the area."
+
+actions:
+  - action_move
+  - action_goto
+  - action_stop
+  - action_pickup
+  - action_place
+  - action_battery_status
+  - action_location_status
+  - action_status_report
+  - action_follow
+  - action_avoid
+  - action_show_map
+  - action_list  # Added missing action
+
+forms:
+  move_form:
+    required_slots:
+      - direction
+      - distance
+      - speed
+
+  goto_form:  # Added missing form
+    required_slots:
+      - location
+
+  pickup_form:
+    required_slots:
+      - object
+
+  place_form:
+    required_slots:
+      - object
+      - location
+
+  follow_form:
+    required_slots:
+      - person
+
+  avoid_form:
+    required_slots:
+      - obstacle
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

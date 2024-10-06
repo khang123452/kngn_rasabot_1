@@ -1,0 +1,101 @@
+version: "3.1"
+
+stories:
+- story: Greet the bot
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Move the robot forward
+  steps:
+  - intent: move
+  - action: move_form
+  - active_loop: move_form
+  - action: action_move
+  - action: utter_move_confirmation
+  - action: action_listen  # End with action_listen
+
+- story: Go to a specific location
+  steps:
+  - intent: goto
+  - action: goto_form
+  - active_loop: goto_form
+  - action: action_goto
+  - action: utter_goto_confirmation
+  - action: action_listen  # End with action_listen
+
+- story: Pick up an object
+  steps:
+  - intent: pickup
+  - action: pickup_form
+  - active_loop: pickup_form
+  - action: action_pickup
+  - action: utter_pickup_confirmation
+  - action: action_listen  # End with action_listen
+
+- story: Place an object
+  steps:
+  - intent: place
+  - action: place_form
+  - active_loop: place_form
+  - action: action_place
+  - action: utter_place_confirmation
+  - action: action_listen  # End with action_listen
+
+- story: Follow a person
+  steps:
+  - intent: follow
+  - action: follow_form
+  - active_loop: follow_form
+  - action: action_follow
+  - action: utter_follow_completed
+  - action: action_listen  # End with action_listen
+
+- story: Avoid an obstacle
+  steps:
+  - intent: avoid
+  - action: avoid_form
+  - active_loop: avoid_form
+  - action: action_avoid
+  - action: utter_avoid_completed
+  - action: action_listen  # End with action_listen
+
+- story: Check battery level
+  steps:
+  - intent: battery
+  - action: action_battery_status
+  - action: utter_battery_status
+  - action: action_listen  # End with action_listen
+
+- story: Ask for location
+  steps:
+  - intent: location
+  - action: action_location_status
+  - action: utter_location_status
+  - action: action_listen  # End with action_listen
+
+- story: Check status
+  steps:
+  - intent: status
+  - action: action_status_report
+  - action: utter_status_report
+  - action: action_listen  # End with action_listen
+
+- story: Show me the map
+  steps:
+  - intent: map
+  - action: action_show_map
+  - action: utter_map
+  - action: action_listen  # End with action_listen
+
+- story: Stop the robot
+  steps:
+  - intent: stop
+  - action: action_stop
+  - action: utter_robot_stopped
+  - action: action_listen  # End with action_listen
